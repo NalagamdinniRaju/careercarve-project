@@ -1,0 +1,107 @@
+.payment-page-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payment-page-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .payment-page-info {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .payment-page-cost {
+    font-size: 18px;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 20px;
+  }
+  
+  .payment-options-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  
+  .payment-button {
+    flex: 1;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.3s, transform 0.1s;
+  }
+  
+  .payment-button:hover {
+    transform: translateY(-2px);
+  }
+  
+  .payment-button:active {
+    transform: translateY(0);
+  }
+  
+  .payment-button-primary {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .payment-button-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .payment-button-secondary {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .payment-button-secondary:hover {
+    background-color: #545b62;
+  }
+  
+  .payment-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .payment-popup-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .payment-success-image {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .payment-success-message {
+    font-size: 20px;
+    color: #28a745;
+    font-weight: bold;
+  }

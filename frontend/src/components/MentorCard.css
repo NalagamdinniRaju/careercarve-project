@@ -1,0 +1,122 @@
+  Mentor Card Styles
+  .mentor-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .mentor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  .mentor-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .premium-badge {
+    background-color: #f1c40f;
+    color: #34495e;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  
+  .mentor-rating {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #e67e22;
+  }
+ 
+
+  /* Mentor Card Styles */
+.mentor-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  
+  
+}
+
+.mentor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.mentor-badge-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.mentor-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.7em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+
+}
+
+.mentor-badge.premium {
+  background-color: #f1c40f;
+  color: #34495e;
+}
+
+.mentor-badge.standard {
+  background-color: #3498db;
+  color: white;
+}
+
+.mentor-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 10px;
+}
+
+.mentor-name {
+  font-size: 1.2em;
+  margin: 0 0 5px;
+}
+
+.mentor-expertise {
+  font-size: 0.9em;
+  color: #7f8c8d;
+  margin: 0 0 10px;
+}
+
+.mentor-bio {
+  font-size: 0.8em;
+  color: #34495e;
+  margin: 0 0 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.mentor-rating {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #e67e22;
+}

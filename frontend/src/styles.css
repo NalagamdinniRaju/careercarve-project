@@ -1,0 +1,836 @@
+/* body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1, h2 {
+    color: #2c3e50;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  input, select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+  
+  .App {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  } */
+  /* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  h1, h2, h3 {
+    color: #2c3e50;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    background-color: #3498db;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-logo img {
+    height: 40px;
+  }
+  
+  .navbar-links {
+    display: flex;
+    list-style: none;
+  }
+  
+  .navbar-links li {
+    margin-left: 20px;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-links a svg {
+    margin-right: 5px;
+  }
+  
+  /* Form Styles */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .btn-primary {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Mentor List Styles */
+  .mentor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .mentor-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .mentor-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .premium-badge {
+    background-color: #f1c40f;
+    color: #34495e;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  
+  /* Dashboard Styles */
+  .booking-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .booking-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .navbar-links {
+      margin-top: 10px;
+    }
+  
+    .navbar-links li {
+      margin: 10px 0;
+    }
+  
+    .mentor-grid, .booking-list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  h1, h2, h3 {
+    color: #2c3e50;
+    text-align: center;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    background-color: #3498db;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 30px;
+    padding-right: 30px;
+
+  }
+  
+  .navbar-logo img {
+    height: 60px;
+ color: white;
+  }
+  
+  .navbar-links {
+    display: flex;
+    list-style: none;
+  }
+  
+  .navbar-links li {
+    margin-left: 20px;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-links a svg {
+    margin-right: 5px;
+  }
+  
+  /* Booking Section Styles */
+  .booking-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .booking-form {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .mentor-cards {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    
+  }
+  
+  /* Form Styles */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .btn-primary {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Mentor Card Styles */
+  .mentor-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .mentor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .home-page p {
+    text-align: center;
+  }
+  
+  .mentor-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .premium-badge {
+    background-color: #f1c40f;
+    color: #34495e;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  
+  .mentor-rating {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #e67e22;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .navbar-links {
+      margin-top: 10px;
+    }
+  
+    .navbar-links li {
+      margin: 10px 0;
+    }
+  
+    .booking-section {
+      flex-direction: column;
+    }
+  
+    .booking-form {
+      max-width: 100%;
+      margin-right: 0;
+    }
+  
+    .mentor-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  /* ... (previous styles) ... */
+
+.booking-section {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .booking-form {
+    flex: 0 0 300px;
+    background-color: white;
+    padding: 20px;
+    padding-right: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-right: 20px;
+    height: fit-content;
+  }
+
+
+  
+  .payment-section {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .payment-section h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .payment-section p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 10px 0;
+  }
+  
+  .payment-section .btn-primary,
+  .payment-section .btn-secondary {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    margin-right: 10px;
+  }
+  
+  .payment-section .btn-primary {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .payment-section .btn-primary:hover {
+    background-color: #218838;
+  }
+  
+  .payment-section .btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  
+  .payment-section .btn-secondary:hover {
+    background-color: #5a6268;
+  }
+
+  .booking-section {
+ 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mentor-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.7em;
+    font-weight: bold;
+   
+  }
+  
+  .mentor-badge.premium {
+    background-color: gold;
+    color: black;
+  }
+  
+  .mentor-badge.standard {
+    background-color: silver;
+    color: black;
+  }
+  
+  .mentor-rating {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+
+/* About Page Container */
+.about-page {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  /* Heading Styles */
+  .about-page h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #e67e22;
+    padding-bottom: 10px;
+  }
+  
+  .about-page h2 {
+    font-size: 1.8em;
+    color: #34495e;
+    margin-top: 30px;
+  }
+  
+  /* Paragraph Styles */
+  .about-page p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    margin: 20px 0;
+  }
+  
+  /* List Styles */
+  .about-page ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .about-page ul li {
+    font-size: 1.1em;
+    color: #2c3e50;
+    background-color: #ecf0f1;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    text-align: left;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .about-page {
+      padding: 15px;
+      margin: 20px auto;
+    }
+  
+    .about-page h1 {
+      font-size: 2em;
+    }
+  
+    .about-page h2 {
+      font-size: 1.5em;
+    }
+  
+    .about-page p,
+    .about-page ul li {
+      font-size: 1em;
+    }
+  }
+
+
+
+  .contact-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .contact-page h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .contact-info p {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .contact-info svg {
+    margin-right: 10px;
+    color: #1ECD97; /* Change color if needed */
+  }
+  
+  .contact-form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-group textarea {
+    height: 150px;
+    resize: vertical;
+  }
+  
+  .btn-primary {
+    background: #1ECD97;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background: #17b978;
+  }
+
+/*  */
+
+
+
+.mentors-container {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: scroll;
+  height: 100vh;
+  padding-top: 0;
+
+}
+
+.mentors-heading {
+  margin-bottom: 20px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0;
+}
+
+.mentor-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .booking-section {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .booking-form {
+    width: 100%;
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  .mentors-container {
+    margin-left: 0;
+  }
+}
+
+
+
+.about-page {
+  padding: 20px;
+  max-width: 800px;
+  margin: 10px auto;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.about-page h1 {
+  font-size: 2.5em;
+  color: #2a7f62;
+  margin-bottom: 10px;
+}
+
+.about-page h2 {
+  font-size: 2em;
+  color: #2a7f62;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.about-page p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-page ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.about-page ul li {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.about-page ul li::before {
+  content: '✔';
+  color: #2a7f62;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.contact-page {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.contact-page h1 {
+  font-size: 2.5em;
+  color: #2a7f62;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 1.2em;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.contact-info p svg {
+  margin-right: 10px;
+  color: #2a7f62;
+}
+
+.contact-form {
+  background: #f9f9f9;
+  padding: 40px;
+  padding-left: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.contact-form .btn-primary {
+  background-color: #2a7f62;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form .btn-primary:hover {
+  background-color: #1e6b50;
+}
